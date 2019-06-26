@@ -1,0 +1,10 @@
+@import 'tailwind.css';
+
+.filters {
+    list-style-type: none;
+}
+
+.filters > a {
+    margin: 5px;
+}
+

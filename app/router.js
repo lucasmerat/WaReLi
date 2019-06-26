@@ -7,6 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-});
+
+    this.route('add', function() {
+      this.route('movies');
+      this.route('books');
+      this.route('songs');
+    });
+
+  });
 
 export default Router;

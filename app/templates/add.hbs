@@ -1,0 +1,18 @@
+<div class="text-center">
+  <h1 class="m-2">Add A WaReLi</h1>
+  <input class="m-2 border border-gray-400 border-solid p-1" type="text">
+  <button class="add border border-black border-solid p-1">Add WaReLi</button>
+  <h5 class="m-2">What kind of media is it?</h5>
+
+  <h2 class="m-2">Select a media type to view</h2>
+</div>
+<div class="flex justify-center">
+  <ul class="filters list-none flex flex-row p-0">
+    {{#link-to "add.movies"}}<li>Movies</li>{{/link-to}}
+    {{#link-to "add.books"}}<li>Books</li>{{/link-to}}
+    {{#link-to "add.songs"}}<li>Songs</li>{{/link-to}}
+  </ul>
+</div>
+
+
+{{outlet}}
