@@ -1,6 +1,6 @@
 export default function() {
   let books = {
-    id: 1,
+    id: 0,
     type: "book",
     attributes: {
       title: "To kill a mockingbird",
@@ -12,4 +12,8 @@ export default function() {
   this.get("books", () => {
     return { data: books };
   });
+
+  this.post("books", ({books}, request)=>{
+    return books.create(JSON.parse(request.requestBody).title);
+  })
 }

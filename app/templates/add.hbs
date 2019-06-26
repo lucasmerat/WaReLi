@@ -1,8 +1,12 @@
 <div class="text-center">
   <h1 class="m-2">Add A WaReLi</h1>
-  <input class="m-2 border border-gray-400 border-solid p-1" type="text">
-  <button class="add border border-black border-solid p-1">Add WaReLi</button>
-  <h5 class="m-2">What kind of media is it?</h5>
+  {{input class="border border-black" value=this.titleValue}}
+  <button onclick={{action "addItem"}} class="add border border-black border-solid p-1">Add WaReLi</button>
+  <select onchange={{action "changeSelectedType"}}>
+    {{#each types as |type|}}
+      <option value={{type}}>{{type}}</option>
+    {{/each}}
+  </select>
 
   <h2 class="m-2">Select a media type to view</h2>
 </div>
