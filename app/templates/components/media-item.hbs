@@ -1,1 +1,7 @@
-<li>{{this.item.title}}</li>
+<li>{{item.title}}</li>
+{{#if item.finished}}
+  <input onchange={{action "markFinished"}} type="checkbox" checked>
+{{else}}
+  <input onchange={{action "markFinished"}} type="checkbox">
+{{/if}}
+

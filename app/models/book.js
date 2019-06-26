@@ -6,5 +6,8 @@ export default Model.extend({
     finished: attr("boolean", {
         defaultValue() { return false }
     }),
-    notes: attr("string")
+    notes: attr("string"),
+    type: attr("string", {
+        defaultValue() { return "Book" }
+    })
 });

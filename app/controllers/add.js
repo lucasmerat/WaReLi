@@ -13,6 +13,9 @@ export default Controller.extend({
             
            const item = this.store.createRecord(this.selectedType, { title: this.titleValue });
            item.save();
+        },
+        updateComplete() {
+            console.log("Ipdating")
         }
     }
 });
