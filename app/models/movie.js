@@ -8,6 +8,6 @@ export default Model.extend({
     }),
     notes: attr("string"),
     type: attr("string", {
-        defaultValue() { return "Song" }
+        defaultValue() { return "Movie" }
     })
 });

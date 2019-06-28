@@ -1,2 +1,7 @@
+<ul class="text-center p-0 mt-5">
+  {{#each this.model as |movie|}}
+    <li><MediaItem @item={{movie}} /></li>
+  {{/each}}
+</ul>
 
 {{outlet}}
