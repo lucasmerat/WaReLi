@@ -6,7 +6,7 @@ export default Controller.extend({
     actions: {
         addItem() {
            let route = this.target.currentRoute.localName;
-           let singularRoute = this.target.currentRoute.localName.substr(0, route.length-1);
+           let singularRoute = this.target.currentRoute.parent.localName.substr(0, route.length-1);
            const item = this.store.createRecord(singularRoute, { title: this.titleValue });
            item.save();
            this.set('titleValue', "");

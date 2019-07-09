@@ -44,6 +44,10 @@ export default function() {
     return { data: null };
   });
 
+  this.get("/books/:id", () => {
+    return { data: null };
+  });
+
   this.get("movies", () => {
     return { data: movies };
   });

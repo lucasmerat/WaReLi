@@ -12,7 +12,7 @@ Router.map(function() {
     this.route('songs');
     this.route('books', function() {
       this.route('book', {
-        path: ':id'
+        path: '/:id'
       });
     });
   });
