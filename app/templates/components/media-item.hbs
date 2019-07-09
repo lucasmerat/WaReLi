@@ -1,7 +1,7 @@
 <li>{{item.title}}</li>
 {{#if item.finished}}
-  <input onchange={{action "markFinished"}} type="checkbox"> {{#link-to (concat "add." route ".book") item.id}}info{{/link-to}}
+  <input class="m-1" onchange={{action "markFinished"}} type="checkbox" checked> {{#link-to (concat "add." route ".book") item.id}}info{{/link-to}}
 {{else}}
-  <input onchange={{action "markFinished"}} type="checkbox"> {{#link-to (concat "add." route ".book") item.id}}info{{/link-to}}
+  <input class="m-1" onchange={{action "markFinished"}} type="checkbox"> {{#link-to (concat "add." route ".book") item.id}}info{{/link-to}}
 {{/if}}
 

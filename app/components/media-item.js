@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-    classNames: ["flex", "flex-row", "justify-center"],
+    classNames: ["flex", "flex-row", "justify-center", "items-center"],
     actions: {
         async markFinished(e) {
             this.item.set("finished", e.target.checked);

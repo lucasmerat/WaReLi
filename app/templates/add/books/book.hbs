@@ -1,5 +1,13 @@
-<div class="inline-block">
-  <h1>{{this.model.title}}</h1>
+<div class="inline-block border-black border text-center">
+  <h4>{{this.model.title}}</h4>
+  <h5>Complete?</h5>
+  {{#if this.model.finished}}
+    <h6 class="text-green bold">Yes</h6>
+  {{else}}
+    <h6 class="text-red bold">No</h6>
+  {{/if}}
+  <h5>Notes:</h5>
+  <h6>{{this.model.notes}}</h6>
 </div>
 
 

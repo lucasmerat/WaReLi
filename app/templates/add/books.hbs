@@ -1,7 +1,11 @@
-<ul class="text-center p-0 mt-5 list-none w-1/2">
-  {{#each this.model as |book|}}
-    <li><MediaItem @item={{book}} @route="books" /></li>
-  {{/each}}
-</ul>
+<div class="flex justify-center items-center">
+  <ul class="item-list text-center p-0 mt-5 list-none w-1/2 inline-block">
+    {{#each this.model as |book|}}
+      <li>
+        <MediaItem @item={{book}} @route="books" />
+      </li>
+    {{/each}}
+  </ul>
+</div>
 
 {{outlet}}
