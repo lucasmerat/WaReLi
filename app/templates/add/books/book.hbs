@@ -7,8 +7,13 @@
     <h6 class="text-red bold">No</h6>
   {{/if}}
   <h5>Notes:</h5>
-  <h6>{{this.model.notes}}</h6>
+  {{#if this.isEditing}}
+    {{input value=newNotes}}
+    <button onclick={{action "saveNotes"}} class="border border-black">Save</button>
+  {{else}}
+    <p>{{this.model.notes}}</p>
+    <button onclick={{action "editNotes"}} class="border border-black">Edit</button>
+  {{/if}}
 </div>
-
 
 {{outlet}}
