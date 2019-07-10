@@ -56,6 +56,10 @@ export default function() {
     return { data: null };
   });
 
+  this.get("/movies/:id", () => {
+    return { data: null };
+  });
+
   this.post("movies", ({ movies }, request) => {
     return movies.create(JSON.parse(request.requestBody).title);
   });
@@ -66,6 +70,10 @@ export default function() {
   });
 
   this.patch("/songs/:id", () => {
+    return { data: null };
+  });
+
+  this.get("/songs/:id", () => {
     return { data: null };
   });
 

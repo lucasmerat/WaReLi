@@ -1,9 +1,5 @@
 <div class="text-center">
-  <h1>{{this.currentRoute}}</h1>
-  <h1 class="m-2">Add A WaReLi</h1>
-  {{input class="border border-black py-1" value=this.titleValue}}
-  <button onclick={{action "addItem"}} class="add border border-black border-solid p-1">Add WaReLi</button>
-
+  <h1 class="m-2">My WaReLis</h1>
   <h2 class="m-2">Select a media type to view</h2>
 </div>
 <div class="flex justify-center">
@@ -14,6 +10,4 @@
   </ul>
 </div>
 
-<div class="flex justify-center">
-  {{outlet}}
-</div>
+{{outlet}}

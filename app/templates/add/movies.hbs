@@ -1,7 +1,14 @@
-<ul class="text-center p-0 mt-5 list-none">
-  {{#each this.model as |movie|}}
-    <li><MediaItem @item={{movie}} /></li>
-  {{/each}}
-</ul>
+<div class="flex justify-center mb-4 mt-6">
+  <AddItemInput @button="Movies"/>
+</div>
+<div class="flex justify-center w-full">
+  <ul class="item-list text-center p-0 mt-5 list-none w-1/4 inline-block">
+    {{#each this.model as |movie|}}
+      <li>
+        <MediaItem @item={{movie}} @route="movies"  @itemName="movie" />
+      </li>
+    {{/each}}
+  </ul>
+  {{outlet}}
+</div>
 
-{{outlet}}
