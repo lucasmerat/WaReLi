@@ -3,10 +3,11 @@
   <h2 class="m-2">Select a media type to view</h2>
 </div>
 <div class="flex justify-center">
+
   <ul class="filters list-none flex flex-row p-0">
-    {{#link-to "add.movies"}}<li>Movies</li>{{/link-to}}
-    {{#link-to "add.books"}}<li>Books</li>{{/link-to}}
-    {{#link-to "add.songs"}}<li>Songs</li>{{/link-to}}
+    {{#link-to "add.movies"}}<li class="text-xl text-black m-2">{{fa-icon "film"}}</li>{{/link-to}}
+    {{#link-to "add.books"}}<li class="text-xl text-black m-2">{{fa-icon "book"}}</li>{{/link-to}}
+    {{#link-to "add.songs"}}<li class="text-xl text-black m-2">{{fa-icon "music"}}</li>{{/link-to}}
   </ul>
 </div>
 
