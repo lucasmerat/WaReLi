@@ -13,7 +13,11 @@ Router.map(function() {
         path: "/:id"
       });
     });
-    this.route("songs");
+    this.route("songs", function() {
+      this.route("song", {
+        path: "/:id"
+      });
+    });
     this.route("books", function() {
       this.route("book", {
         path: "/:id"

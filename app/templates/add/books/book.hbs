@@ -9,7 +9,7 @@
   {{/if}}
   <h5 class="pb-2">Notes:</h5>
   {{#if this.isEditing}}
-    {{input class="border border-black py-1" value=newNotes}}
+    <Textarea class="border border-black py-1 m-auto flex mb-2" @value={{newNotes}} />
     <button onclick={{action "saveNotes"}} class="border border-black px-3 py-1">Save</button>
   {{else}}
     <p>{{this.model.notes}}</p>
