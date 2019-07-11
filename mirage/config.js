@@ -28,7 +28,7 @@ export default function() {
       title: "Hey Ya",
       finished: false,
       notes: "",
-      type: "Movie"
+      type: "Song"
     }
   };
 

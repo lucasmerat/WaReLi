@@ -1,13 +1,12 @@
 <div class="text-center">
-  <h1 class="m-2">My WaReLis</h1>
-  <h2 class="m-2">Select a media type to view</h2>
+  <h1 class="m-2">WaReLis</h1>
 </div>
 <div class="flex justify-center">
 
   <ul class="filters list-none flex flex-row p-0">
-    {{#link-to "add.movies"}}<li class="text-xl text-black m-2">{{fa-icon "film"}}</li>{{/link-to}}
-    {{#link-to "add.books"}}<li class="text-xl text-black m-2">{{fa-icon "book"}}</li>{{/link-to}}
-    {{#link-to "add.songs"}}<li class="text-xl text-black m-2">{{fa-icon "music"}}</li>{{/link-to}}
+    {{#link-to "add.movies" class="category-icon"}}<li class="text-xl text-grey-darkest m-2">{{fa-icon "film"}}</li>{{/link-to}}
+    {{#link-to "add.books" class="category-icon"}}<li class="text-xl text-grey-darkest m-2">{{fa-icon "book"}}</li>{{/link-to}}
+    {{#link-to "add.songs" class="category-icon"}}<li class="text-xl text-grey-darkest m-2">{{fa-icon "music"}}</li>{{/link-to}}
   </ul>
 </div>
 
