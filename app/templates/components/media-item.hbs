@@ -1,7 +1,23 @@
-<li>{{item.title}}</li>
 {{#if item.finished}}
-  <input class="m-1" onchange={{action "markFinished"}} type="checkbox" checked> {{#link-to (concat "add." route "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+  <div class="flex items-center pl-1 w-1/2 relative">
+    <label class="container">
+      <input class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox" checked>
+      <span class="checkmark"></span>
+    </label>
+    <li class="item-title">{{item.title}}</li>
+  </div>
+  <div class="flex justify-end w-1/2 pr-1">
+    {{#link-to (concat "add." route "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+  </div>
 {{else}}
-  <input class="m-1" onchange={{action "markFinished"}} type="checkbox"> {{#link-to  (concat "add." route  "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+  <div class="flex items-center pl-1 w-1/2 relative">
+    <label class="container">
+      <input class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+    <li class="item-title">{{item.title}}</li>
+  </div>
+  <div class="flex justify-end w-1/2 pr-1">
+    {{#link-to  (concat "add." route  "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+  </div>
 {{/if}}
-

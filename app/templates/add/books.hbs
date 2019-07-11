@@ -2,9 +2,9 @@
   <AddItemInput @button="Book"/>
 </div>
 <div class="flex justify-center w-full">
-  <ul class="item-list text-center p-0 mt-5 list-none w-1/4 inline-block">
+  <ul class="item-list text-center p-0 mt-5 list-none w-1/2 inline-block">
     {{#each this.model as |book|}}
-      <li>
+      <li class="border-blue-lighter border-b border-t py-2 mt-2">
         <MediaItem @item={{book}} @route="books" />
       </li>
     {{/each}}
