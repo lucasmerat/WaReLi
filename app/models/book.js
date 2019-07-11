@@ -6,6 +6,7 @@ export default Model.extend({
     finished: attr("boolean", {
         defaultValue() { return false }
     }),
+    dateFinished: attr("date"),
     notes: attr("string"),
     type: attr("string", {
         defaultValue() { return "Book" }

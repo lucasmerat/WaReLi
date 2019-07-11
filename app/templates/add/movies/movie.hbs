@@ -7,7 +7,10 @@
   {{else}}
     <h5 class="text-red bold py-2">No</h5>
   {{/if}}
-  <h5 class="pb-2">Notes:</h5>
+  {{#if this.model.dateFinished}}
+    <p class="mb-1 text-grey-darker">{{moment-calendar this.model.dateFinished}}</p>
+  {{/if}}
+  <p class="pb-2">Notes:</p>
   {{#if this.isEditing}}
     <Textarea class="border border-black py-1 m-auto flex mb-2" @value={{newNotes}} />
     <button onclick={{action "saveNotes"}} class="border border-black px-3 py-1">Save</button>

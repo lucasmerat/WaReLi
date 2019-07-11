@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
+    classNames: ["w-1/2", "flex", "justify-center"],
     titleValue: "",
     router: service(),
     store: service(),
