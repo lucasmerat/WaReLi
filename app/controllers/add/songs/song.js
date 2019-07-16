@@ -5,6 +5,9 @@ export default Controller.extend({
     isEditing: false,
     actions: {
         editNotes() {
+            this.store.findRecord("song", this.model.id).then(record=> {
+                this.set("newNotes", record.notes);
+            });
             this.set("isEditing", true);
         }, 
         async saveNotes() {
@@ -12,6 +15,7 @@ export default Controller.extend({
             updatedNotesModel.set("notes", this.newNotes);
             await updatedNotesModel.save();
             this.set("isEditing", false);
+            this.set("newNotes", "");
         }
     }
 });
