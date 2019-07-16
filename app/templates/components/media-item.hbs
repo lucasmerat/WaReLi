@@ -7,7 +7,7 @@
     <li class="item-title">{{item.title}}</li>
   </div>
   <div class="flex justify-end w-1/2 pr-1">
-    {{#link-to (concat "add." route "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+    {{#link-to (concat "add." route "." (lowercase item.type)) item.id class="text-grey-darker"}}{{fa-icon "info-circle"}}{{/link-to}}
   </div>
 {{else}}
   <div class="flex items-center pl-1 w-1/2 relative">
@@ -18,6 +18,6 @@
     <li class="item-title">{{item.title}}</li>
   </div>
   <div class="flex justify-end w-1/2 pr-1">
-    {{#link-to  (concat "add." route  "." (lowercase item.type)) item.id class="text-black"}}{{fa-icon "info-circle"}}{{/link-to}}
+    {{#link-to  (concat "add." route  "." (lowercase item.type)) item.id class="text-grey-darker"}}{{fa-icon "info-circle"}}{{/link-to}}
   </div>
 {{/if}}
