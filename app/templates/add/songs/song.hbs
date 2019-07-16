@@ -1,5 +1,5 @@
 <div class="inline-block border-black border text-center px-5 py-2 w-1/3">
-  <h4 class="py-1">{{this.model.title}}</h4>
+  <h2 class="my-2">{{this.model.title}}</h2>
   <h4>{{this.title}}</h4>
   <h5>Complete?</h5>
   {{#if this.model.finished}}
@@ -10,7 +10,7 @@
   {{#if this.model.dateFinished}}
     <p class="mb-1 text-grey-darker">{{moment-calendar this.model.dateFinished}}</p>
   {{/if}}
-  <h5 class="pb-2">Notes:</h5>
+  <p class="pb-2">Notes:</p>
   {{#if this.isEditing}}
     <Textarea class="border border-black py-1 m-auto flex mb-2" @value={{newNotes}} />
     <button onclick={{action "saveNotes"}} class="border border-black px-3 py-1">Save</button>
