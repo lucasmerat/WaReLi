@@ -7,7 +7,8 @@ export default Component.extend({
     router: service(),
     store: service(),
     actions: {
-        async addItem() {
+        async addItem(e) {
+           e.preventDefault();
            let route = this.router.currentRoute.parent.localName;
            let singularRoute = this.router.currentRoute.parent.localName.substr(0, route.length-1);
            const item = this.store.createRecord(singularRoute, { title: this.titleValue });
