@@ -1,20 +1,27 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { task } from 'ember-concurrency';
 
 export default Component.extend({
     classNames: ["w-1/2", "flex", "justify-center"],
+    errorFlash: "",
     titleValue: "",
     router: service(),
     store: service(),
+    createResourceTask: task(function * () {
+        try {
+            const resource = this.createResource(this.titleValue);
+            yield resource.save();
+            this.set("titleValue", "");
+            resource.transitionToShow();
+        } catch (e) {
+            this.set("errorFlash", e.errors[0]);
+        } 
+    }),
     actions: {
-        async addItem(e) {
+        addItem(e) {
            e.preventDefault();
-           let route = this.router.currentRoute.parent.localName;
-           let singularRoute = this.router.currentRoute.parent.localName.substr(0, route.length-1);
-           const item = this.store.createRecord(singularRoute, { title: this.titleValue });
-           await item.save();
-           this.set('titleValue', "");
-           this.router.transitionTo(`add.${route}.${singularRoute}`, item.id)
+           this.createResourceTask.perform(this.titleValue);
         }
     },
 });

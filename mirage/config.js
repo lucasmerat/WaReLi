@@ -52,17 +52,24 @@ export default function() {
     return { data: movies };
   });
 
-  this.patch("/movies/:id", () => {
-    return { data: null };
+  this.patch("/movies/:id", function ({movies}, request) {
+    const attrs = this.normalizedRequestAttrs();
+    const movie = movies.find(request.params.id);
+    movie.update(attrs);
+    return { data: movie };
   });
 
-  this.get("/movies/:id", () => {
-    return { data: null };
+  this.get("/movies/:id", ({movies}, request) => {
+    const movie = movies.find(request.params.id);
+    return { data: movie };
   });
 
-  this.post("movies", ({ movies }, request) => {
-    return movies.create(JSON.parse(request.requestBody).title);
-  });
+  this.post("movies", function ({ movies }) {
+    const attrs = this.normalizedRequestAttrs();
+    return movies.create(attrs);
+  }, {timing: 3000});
+
+  // this.post('/movies', {errors: ['there was an error']}, 404)
 
 
   this.get("songs", () => {

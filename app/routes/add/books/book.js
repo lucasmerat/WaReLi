@@ -6,7 +6,7 @@ export default Route.extend({
     return this.store.findRecord("book", id);
   },
   actions: {
-    willTransition(transition) {
+    willTransition() {
       this.controller.setProperties({
         isEditing: false,
         newNotes: ""

@@ -6,7 +6,7 @@ export default Route.extend({
     return this.store.findRecord("movie", id);
   },
   actions: {
-    willTransition(transition) {
+    willTransition() {
       this.controller.setProperties({
         isEditing: false,
         newNotes: ""
