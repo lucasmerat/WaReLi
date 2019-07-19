@@ -10,17 +10,6 @@ export default function() {
     }
   };
 
-  let movies = {
-    id: 0,
-    type: "movie",
-    attributes: {
-      title: "asdfasdf",
-      finished: false,
-      notes: "",
-      type: "Movie"
-    }
-  };
-
   let songs = {
     id: 0,
     type: "song",
@@ -53,12 +42,11 @@ export default function() {
     return { data: book };
   });
 
-  this.get("movies", () => {
-    return { data: movies };
+  this.get("movies", function ({movies}, request) {
+    return movies.all();
   });
 
   this.patch("/movies/:id", function ({movies}, request) {
-    console.log(movies)
     const attrs = this.normalizedRequestAttrs();
     const movie = movies.find(request.params.id);
     console.log(attrs, movie, request.params.id)
@@ -96,6 +84,7 @@ export default function() {
 
   this.post("songs", function ({ songs }) {
     const attrs = this.normalizedRequestAttrs();
+    console.log(songs.create(attrs))
     return songs.create(attrs);
   }, {timing: 3000});
 }

@@ -1,5 +1,3 @@
-export default function() {
-  // server.db.loadData({
-  //     type: "book", title: 'Interstellar'
-  // });
+export default function(server) {
+  server.createList("movie", 10);
 }

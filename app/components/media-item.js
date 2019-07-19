@@ -4,6 +4,7 @@ export default Component.extend({
     classNames: ["flex", "flex-row", "items-center"],
     actions: {
         async markFinished(e) {
+            console.log(this.item)
             this.item.set("dateFinished", Date());
             this.item.set("finished", e.target.checked);
             await this.item.save();
