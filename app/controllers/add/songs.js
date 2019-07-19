@@ -4,10 +4,10 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
     router: service(),
-    persistedMovies: computed('model.@each.{isNew}', function() {
+    persistedSongs: computed('model.@each.{isNew}', function() {
         return this.model.filterBy('isNew', false);
     }),
-    createMovie: function (title) {
-        return this.store.createRecord("movie", { title });
+    createSong: function (title) {
+        return this.store.createRecord("song", { title });
     }
 });

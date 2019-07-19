@@ -1,7 +1,9 @@
 import DS from 'ember-data';
+import { inject as service } from '@ember/service';
 const { Model, attr } = DS;
 
 export default Model.extend({
+    router: service(),
     title: attr("string"),
     finished: attr("boolean", {
         defaultValue() { return false }
@@ -10,5 +12,9 @@ export default Model.extend({
     notes: attr("string"),
     type: attr("string", {
         defaultValue() { return "Song" }
-    })
+    }),
+    transitionToShow () {
+        this.router.transitionTo(this.showRoute, this.id);
+    }, 
+    showRoute: "add.songs.song"
 });

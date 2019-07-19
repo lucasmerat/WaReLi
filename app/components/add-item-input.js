@@ -15,13 +15,14 @@ export default Component.extend({
             this.set("titleValue", "");
             resource.transitionToShow();
         } catch (e) {
+            console.warn("There is an error", e)
             this.set("errorFlash", e.errors[0]);
         } 
     }),
     actions: {
         addItem(e) {
            e.preventDefault();
-           this.createResourceTask.perform(this.titleValue);
+           this.createResourceTask.perform();
         }
     },
 });

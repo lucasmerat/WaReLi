@@ -36,16 +36,21 @@ export default function() {
     return { data: books };
   });
 
-  this.post("books", ({ books }, request) => {
-    return books.create(JSON.parse(request.requestBody).title);
+  this.post("books", function ({ books }) {
+    const attrs = this.normalizedRequestAttrs();
+    return books.create(attrs);
+  }, {timing: 3000});
+
+  this.patch("/books/:id", function ({books}, request) {
+    const attrs = this.normalizedRequestAttrs();
+    const book = books.find(request.params.id);
+    book.update(attrs);
+    return { data: book };
   });
 
-  this.patch("/books/:id", () => {
-    return { data: null };
-  });
-
-  this.get("/books/:id", () => {
-    return { data: null };
+  this.get("/books/:id", ({books}, request) => {
+    const book = books.find(request.params.id);
+    return { data: book };
   });
 
   this.get("movies", () => {
@@ -53,8 +58,10 @@ export default function() {
   });
 
   this.patch("/movies/:id", function ({movies}, request) {
+    console.log(movies)
     const attrs = this.normalizedRequestAttrs();
     const movie = movies.find(request.params.id);
+    console.log(attrs, movie, request.params.id)
     movie.update(attrs);
     return { data: movie };
   });
@@ -71,20 +78,24 @@ export default function() {
 
   // this.post('/movies', {errors: ['there was an error']}, 404)
 
-
   this.get("songs", () => {
     return { data: songs };
   });
 
-  this.patch("/songs/:id", () => {
-    return { data: null };
+  this.patch("/songs/:id", function ({songs}, request) {
+    const attrs = this.normalizedRequestAttrs();
+    const song = songs.find(request.params.id);
+    song.update(attrs);
+    return { data: song };
   });
 
-  this.get("/songs/:id", () => {
-    return { data: null };
+  this.get("/songs/:id", ({songs}, request) => {
+    const song = songs.find(request.params.id);
+    return { data: song };
   });
 
-  this.post("songs", ({ songs }, request) => {
-    return songs.create(JSON.parse(request.requestBody).title);
-  });
+  this.post("songs", function ({ songs }) {
+    const attrs = this.normalizedRequestAttrs();
+    return songs.create(attrs);
+  }, {timing: 3000});
 }
