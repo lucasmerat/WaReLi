@@ -1,5 +1,7 @@
 <div class="flex justify-center mb-4 mt-6">
-  <AddItemInput @createResource={{this.createSong}} @button="Song"/>
+  <ProviderCreateResource @modelName="song" as |createResourceTask errorFlash|>
+    <AddItemInput @createResourceTask={{createResourceTask}} @errorFlash={{errorFlash}}/>
+  </ProviderCreateResource>
 </div>
 <div class="flex justify-center w-full">
   <ul class="item-list text-center p-0 mt-5 list-none w-1/2 inline-block">

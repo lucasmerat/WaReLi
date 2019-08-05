@@ -6,8 +6,5 @@ export default Controller.extend({
     router: service(),
     persistedBooks: computed('model.@each.{isNew}', function() {
         return this.model.filterBy('isNew', false);
-    }),
-    createBook: function (title) {
-        return this.store.createRecord("book", { title });
-    }
+    })
 });

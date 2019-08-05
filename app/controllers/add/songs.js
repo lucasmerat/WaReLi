@@ -6,8 +6,5 @@ export default Controller.extend({
     router: service(),
     persistedSongs: computed('model.@each.{isNew}', function() {
         return this.model.filterBy('isNew', false);
-    }),
-    createSong: function (title) {
-        return this.store.createRecord("song", { title });
-    }
+    })
 });
