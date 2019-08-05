@@ -48,6 +48,7 @@
     "ember-resolver": "^5.0.1",
     "ember-select": "^0.7.2",
     "ember-source": "~3.10.0",
+    "ember-test-selectors": "^2.1.0",
     "ember-welcome-page": "^4.0.0",
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",

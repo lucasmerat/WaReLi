@@ -1,11 +1,13 @@
 <div class="flex justify-center mb-4 mt-6">
-  <AddItemInput @createResource={{this.createMovie}} @button="Movie"/>
+  <ProviderCreateResource @modelName="movie" as |createResourceTask errorFlash|>
+    <AddItemInput @createResourceTask={{createResourceTask}} @errorFlash={{errorFlash}} />
+  </ProviderCreateResource>
 </div>
 <div class="flex justify-center w-full">
   <ul class="item-list text-center p-0 mt-5 list-none w-1/2 inline-block">
     {{#each this.persistedMovies as |movie|}}
       <li class="border-blue-lighter s-b border-b border-t py-2 mt-2">
-        <MediaItem @item={{movie}} @route="movies" />
+        <MediaItem data-test-media-item={{movie.title}} @item={{movie}} @route="movies" />
       </li>
     {{/each}}
   </ul>

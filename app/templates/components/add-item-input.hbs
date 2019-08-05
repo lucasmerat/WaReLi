@@ -1,5 +1,5 @@
 <form class="w-full flex justify-center" onsubmit={{action "addItem"}}>
-  <Input class="shadow-md py-2 outline-none px-2 w-1/2" @value={{this.titleValue}} @required={{"true"}} />
+  <Input data-test-item-title class="shadow-md py-2 outline-none px-2 w-1/2" @value={{this.titleValue}} @required={{"true"}} />
   <div class="text-red">
     {{this.errorFlash}}
   </div>
@@ -8,7 +8,7 @@
       {{fa-icon "plus"}}
     </button>
   {{else}}
-    <button type="submit" class="add-button bg-blue w-10 h-10 rounded-full text-white shadow-md ml-2">
+    <button data-test-add-item type="submit" class="add-button bg-blue w-10 h-10 rounded-full text-white shadow-md ml-2">
       {{fa-icon "plus"}}
     </button>
   {{/if}}
