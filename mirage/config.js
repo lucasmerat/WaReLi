@@ -19,7 +19,7 @@ export default function() {
 
   this.get("/books/:id", ({books}, request) => {
     const book = books.find(request.params.id);
-    return { data: book };
+    return book;
   });
 
   this.get("movies", function ({movies}) {
@@ -29,14 +29,13 @@ export default function() {
   this.patch("/movies/:id", function ({movies}, request) {
     const attrs = this.normalizedRequestAttrs();
     const movie = movies.find(request.params.id);
-    console.log(attrs, movie, request.params.id)
     movie.update(attrs);
     return { data: movie };
   });
 
-  this.get("/movies/:id", ({movies}, request) => {
+  this.get("/movies/:id", function ({movies}, request) {
     const movie = movies.find(request.params.id);
-    return { data: movie };
+    return  movie;
   });
 
   this.post("movies", function ({ movies }) {
@@ -59,12 +58,11 @@ export default function() {
 
   this.get("/songs/:id", ({songs}, request) => {
     const song = songs.find(request.params.id);
-    return { data: song };
+    return song;
   });
 
   this.post("songs", function ({ songs }) {
     const attrs = this.normalizedRequestAttrs();
-    console.log(songs.create(attrs))
     return songs.create(attrs);
   }, {timing: 3000});
 }

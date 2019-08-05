@@ -1,7 +1,7 @@
 {{#if item.finished}}
   <div class="flex items-center pl-1 w-1/2 relative">
     <label class="container">
-      <input class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox" checked>
+      <input data-test-mark-complete class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox" checked>
       <span class="checkmark"></span>
     </label>
     <li class="item-title">{{item.title}}</li>
@@ -12,7 +12,7 @@
 {{else}}
   <div class="flex items-center pl-1 w-1/2 relative">
     <label class="container">
-      <input class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox">
+      <input data-test-mark-complete class="checkbox m-1" onchange={{action "markFinished"}} type="checkbox">
       <span class="checkmark"></span>
     </label>
     <li class="item-title">{{item.title}}</li>

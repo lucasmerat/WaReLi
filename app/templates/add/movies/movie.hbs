@@ -3,7 +3,7 @@
   <h4>{{this.title}}</h4>
   <h5>Complete?</h5>
   {{#if this.model.finished}}
-    <h5 class="text-green bold py-2">Yes</h5>
+    <h5 data-test-is-complete class="text-green bold py-2">Yes</h5>
   {{else}}
     <h5 class="text-red bold py-2">No</h5>
   {{/if}}
@@ -12,11 +12,11 @@
   {{/if}}
   <p class="pb-2">Notes:</p>
   {{#if this.isEditing}}
-    <Textarea class="border border-black py-1 m-auto flex mb-2" @value={{newNotes}} />
-    <button onclick={{action "saveNotes"}} class="border border-black px-3 py-1">Save</button>
+    <Textarea data-test-notes-input class="border border-black py-1 m-auto flex mb-2" @value={{newNotes}} />
+    <button data-test-save-notes onclick={{action "saveNotes"}} class="border border-black px-3 py-1">Save</button>
   {{else}}
-    <p>{{this.model.notes}}</p>
-    <button onclick={{action "editNotes"}} class="border border-black px-3 py-1 mt-1">Edit</button>
+    <p data-test-notes-output>{{this.model.notes}}</p>
+    <button data-test-edit-notes onclick={{action "editNotes"}} class="border border-black px-3 py-1 mt-1">Edit</button>
   {{/if}}
 </div>
 
