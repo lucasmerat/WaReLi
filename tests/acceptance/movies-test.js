@@ -25,7 +25,7 @@ module("Acceptance | movies", function(hooks) {
     this.server.createList('movie', 10);
     
     await visit("/add/movies");
-    await click("[data-test-mark-complete]");   
+    await click("[data-test-mark-complete]");   //Update this to be specific for ID on test selector 
     await visit("/add/movies/1");
     assert.equal(find('[data-test-is-complete]').textContent, "Yes");
   });

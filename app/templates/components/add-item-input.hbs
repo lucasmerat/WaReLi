@@ -1,6 +1,6 @@
 <form class="w-full flex justify-center" onsubmit={{action "addItem"}}>
   <Input data-test-item-title class="shadow-md py-2 outline-none px-2 w-1/2" @value={{this.titleValue}} @required={{"true"}} />
-  <div class="text-red">
+  <div data-test-error-flash class="text-red">
     {{this.errorFlash}}
   </div>
   {{#if this.createResourceTask.isRunning}}
