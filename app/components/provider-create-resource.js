@@ -5,7 +5,6 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
     init() {
         this._super(...arguments);
-        console.log(this);
     },
     tagName: "",
     store: service(),

@@ -1,28 +1,8 @@
 export default function() {
-  let books = {
-    id: 0,
-    type: "book",
-    attributes: {
-      title: "To kill a mockingbird",
-      finished: false,
-      notes: "",
-      type: "Book"
-    }
-  };
+ 
 
-  let songs = {
-    id: 0,
-    type: "song",
-    attributes: {
-      title: "Hey Ya",
-      finished: false,
-      notes: "",
-      type: "Song"
-    }
-  };
-
-  this.get("books", () => {
-    return { data: books };
+  this.get("books", function ({books}) {
+    return books.all();
   });
 
   this.post("books", function ({ books }) {
@@ -42,7 +22,7 @@ export default function() {
     return { data: book };
   });
 
-  this.get("movies", function ({movies}, request) {
+  this.get("movies", function ({movies}) {
     return movies.all();
   });
 
@@ -66,8 +46,8 @@ export default function() {
 
   // this.post('/movies', {errors: ['there was an error']}, 404)
 
-  this.get("songs", () => {
-    return { data: songs };
+  this.get("songs", function ({songs}) {
+    return songs.all();
   });
 
   this.patch("/songs/:id", function ({songs}, request) {
