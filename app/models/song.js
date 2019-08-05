@@ -1,20 +1,10 @@
+import Media from './media';
 import DS from 'ember-data';
-import { inject as service } from '@ember/service';
-const { Model, attr } = DS;
+const { attr } = DS;
 
-export default Model.extend({
-    router: service(),
-    title: attr("string"),
-    finished: attr("boolean", {
-        defaultValue() { return false }
-    }),
-    dateFinished: attr("date"),
-    notes: attr("string"),
+export default Media.extend({
     type: attr("string", {
         defaultValue() { return "Song" }
     }),
-    transitionToShow () {
-        this.router.transitionTo(this.showRoute, this.id);
-    }, 
     showRoute: "add.songs.song"
 });
