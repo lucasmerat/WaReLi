@@ -7,6 +7,11 @@ export default Component.extend({
             this.item.set("dateFinished", Date());
             this.item.set("finished", e.target.checked);
             await this.item.save();
+        }, 
+        deleteItem() {
+            console.log("Deleting");
+            this.item.deleteRecord();
+            this.item.save();
         }
     }
 });

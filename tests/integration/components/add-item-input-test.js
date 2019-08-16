@@ -24,11 +24,6 @@ module("Integration | Component | add-item-input", function(hooks) {
     const inputField = find("[data-test-item-title]");
     assert.ok(inputField.value.includes("Test Title"));
   });
-  skip("it can clear title value", async function(assert) {
-    await render(hbs`<AddItemInput />`);
-
-
-  });
   test("it can display an error flash", async function(assert) {
     this.set("errorFlash", "Error") ;
     await render(hbs`<AddItemInput @errorFlash={{errorFlash}} />`); //Setting a value with passed in props

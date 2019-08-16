@@ -19,5 +19,8 @@
   </div>
   <div class="flex justify-end w-1/2 pr-1">
     {{#link-to  (concat "add." route  "." (lowercase item.type)) item.id class="text-grey-darker"}}{{fa-icon "info-circle"}}{{/link-to}}
+    <button onclick={{action "deleteItem"}}>
+      {{fa-icon "trash" class="text-red"}}
+    </button>
   </div>
 {{/if}}

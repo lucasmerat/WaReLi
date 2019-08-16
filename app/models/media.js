@@ -10,9 +10,6 @@ export default Model.extend({
     }),
     dateFinished: attr("date"),
     notes: attr("string"),
-    type: attr("string", {
-        defaultValue() { return "Movie" }
-    }),
     transitionToShow () {
         this.router.transitionTo(this.showRoute, this.id);
     }, 
